@@ -98,7 +98,7 @@ echo "Residuo A %= B" $((numA %= numB))
 | Identificador | Descripción                          |
 | ------------- | ------------------------------------ |
 | $0            | El nombre del script                 |
-| $1 al ${10}   | El número de argumento, si son más de un dígito se usan {} |
+| \$1 al ${10}  | El número de argumento, si son más de un dígito se usan {} |
 | $#            | Contador de argumentos  |
 | $*            | Refiere a los argumentos | 
 
@@ -113,4 +113,20 @@ echo "EL nombre del curso es: $nombreCurso"
 echo "El horario del curso es: $horarioCurso"
 echo "El numero de parametros enviados es de: $#"
 echo "Los parametros enviados son: $*"
+```
+### Sustitución de comandos en variables
+Se puede almacenar la salida de una ejecución de un comando en una variable
+- Usando el backtick caracter. (`)
+- Usando el signo $: `$(comando)`
+```bash
+#!/bin/bash
+#Save output of commands in a varible
+#Autor: Cristian Sacta 
+
+ubicacionActual=`pwd`
+infoKernel=$(uname -a)
+
+echo "La ubicación actual es la siguiente: $ubicacionActual"
+echo "Información del kernel: $infoKernel"
+
 ```
