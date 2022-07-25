@@ -130,3 +130,7 @@ echo "La ubicación actual es la siguiente: $ubicacionActual"
 echo "Información del kernel: $infoKernel"
 
 ```
+
+### Debug
+- bash -v: Muestra el resultado detallado de nuestro script, evaluado linea a linea.
+- bash -x: Despliega la información de los comandos usados y su salida. 
