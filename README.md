@@ -36,28 +36,28 @@ export CURSE_NAME //Que se inicie con el SO
 ```
 
 - Declaracion de variables:
-``bash
+```bash
 opcion=5 
 nombre=Marco
-``
+```
 
 - Uso de variables:
-``bash
+```bash
 echo "Opcion: $opcion y nombre: $nombre"
-``
+```
 > El alcance de las variables esta restringida al proceso que lo creo, es decir no se pueden usar en otr script a menos de usar la palabra reservada: export;
-``bash
+```bash
 #exportar la varible nombre para que este disponible a otros procesos
 export nombre
 #llamar al siguiente script y recuperar la varible
 ./2_variables_alcance.sh
-``
+```
 Y para recuperarla se lo llama en el siguiente script, así:
-``bash
+```bash
 #!/bin/bash
 #Program for view varibles declaration
 #Variables a nivel de programa
 
 echo "Opcion nombre del script anterior: $nombre"
-``
+```
 
