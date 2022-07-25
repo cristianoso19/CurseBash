@@ -94,3 +94,23 @@ echo "Multiplicacion A *= B" $((numA *= numB))
 echo "Dividir A /= B" $((numA /= numB))
 echo "Residuo A %= B" $((numA %= numB))
 ```
+### Script con Argumentos
+| Identificador | Descripción                          |
+| ------------- | ------------------------------------ |
+| $0            | El nombre del script                 |
+| $1 al ${10}   | El número de argumento, si son más de un dígito se usan {} |
+| $#            | Contador de argumentos  |
+| $*            | Refiere a los argumentos | 
+
+```bash
+#!/bin/bash
+#Parametros
+
+nombreCurso=$1
+horarioCurso=$2
+
+echo "EL nombre del curso es: $nombreCurso"
+echo "El horario del curso es: $horarioCurso"
+echo "El numero de parametros enviados es de: $#"
+echo "Los parametros enviados son: $*"
+```
