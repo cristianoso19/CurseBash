@@ -30,10 +30,10 @@ Estos comandos son colocados en un archivo de texto simple y ejecutados en la te
 - Tipos de variables:
 -- De usuario:
 -- De entorno o de SO: se encuentran en `/etc/profile` generalmente se usua mayusculas como: 
-``bash
+```bash
 CURSE_NAME=ProgracionBash
 export CURSE_NAME //Que se inicie con el SO
-``
+```
 
 - Declaracion de variables:
 ``bash
@@ -60,3 +60,4 @@ Y para recuperarla se lo llama en el siguiente script, así:
 
 echo "Opcion nombre del script anterior: $nombre"
 ``
+
