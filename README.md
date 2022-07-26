@@ -190,14 +190,16 @@ Se necesita conocer ciertos criterios utilizados en las expresiones regulares qu
 - `{n}` Representa n veces de una expresión.
 - `[ ]` Representa un conjunto de caracteres, por ejemplo: [a-z] representa las letras del abecedario de la a a la z.
 
-> [Cheatsheet regex] (http://w3.unpocodetodo.info/utiles/regex.php)
+[Cheatsheet regex] (http://w3.unpocodetodo.info/utiles/regex.php)
 
 Tomando en cuenta estos criterios se realizará un programa que valida la siguiente información:
-Número de Identificación de un tamaño de 10 números. Ejemplo: 1717836520
-País de Origen denotado por dos letras en un rango específico. Ejemplo: EC, CO, US
-Fecha de Nacimiento en el formato yyyyMMDD. Ejemplo: 20181222
+
+- Número de Identificación de un tamaño de 10 números. Ejemplo: 1717836520.
+- País de Origen denotado por dos letras en un rango específico. Ejemplo: EC, CO, US.
+- Fecha de Nacimiento en el formato yyyyMMDD. Ejemplo: 20181222
 
 Primero se definirá las expresiones regulares y se solicitará la información del usuario:
+
 <img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.58.48-4bedb3f4-a096-4381-97ad-61e73844d1d4.jpg"/>
 
 Luego se validará cada expresión regular comenzando con la identificación, para lo cual para cada validación se utilizará la sentencia condicional if y para comparar la expresión se debe utilizar el siguiente formato especial if [[ $variable =~ $expresionRegular ]] como se muestra a continuación.
@@ -207,3 +209,31 @@ Luego se validará cada expresión regular comenzando con la identificación, pa
 Se realizará la ejecución de la aplicación con los dos escenarios el correcto y el incorrecto como se muestra a continuación:
 
 <img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.59.55-0c3eb175-30c5-4563-97f0-d325ead87735.jpg"/>
+### Validar información
+Es importante para asegurarnos la calidad de la información ingresada, para evitar posibles errores.
+Tenemos dos maneras de hacerlo.
+- `read -n<numero de caracteres>`
+- Usando expresiones regulares
+
+> Cuando usamos este tipo de validaciones **NO SE PUEDE BORRAR LA INFORMACIÓN INGRESADA CON** <kbd>BACKSPACE</kbd>
+
+```bash
+#!/bin/bash
+#Capture info and validate  
+#Autor: Cristian Sacta 
+
+option=0
+backupName=""
+clave=""
+
+echo "Utility Postgres Program"
+#Acept input of one character data
+read -n1 -p "ingresar una opcion:" option
+echo -e "\n"
+read -n10 -p "Ingresar el nombre del archivo del backup:" backupName
+echo -e "\n"
+echo "Opcion: $option . backupName:$backupName"
+#Ideal para contraseñas
+read -s -p "Clave: " clave
+echo "Clave: $Clave"
+```
