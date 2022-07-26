@@ -177,18 +177,21 @@ echo "Opcion: $option . backupName:$backupName"
 
 ### Expresiones regulares
 
-Cuando se solicita ingresar información través de un programa por parte del usuario que está utilizando el programa, independientemente el lenguaje que esté realizado; es importante considerar la validación de la información no solo en su tamaño sino también en los tipos de datos, formatos soportados lo cual nos permite asegurar la calidad de la información que recibimos, almacenamos y procesamos.
+Cuando se solicita ingresar información al usuario que está usando el programa, independientemente el lenguaje que esté realizado, es importante considerar la validación de la información no solo en su tamaño sino también en los tipos de datos y formatos soportados, esto nos permite asegurar la calidad de la información que recibida y que sera procesada.
 
-Dentro de este contexto en la programación bash para cumplir con este objetivo se utiliza expresiones regulares, las cuales son básicamente cadenas de caracteres que definen un patrón de búsqueda que se valida frente a una información específica para asegurar que cumple la validación definida.
-
+Dentro de este contexto en la programación bash para cumplir con este objetivo se utiliza **EXPRESIONES REGULARES**, las cuales son básicamente cadenas de caracteres que definen un patrón de búsqueda que se valida frente a una información específica para asegurar que cumple la validación definida.
+  
 Se necesita conocer ciertos criterios utilizados en las expresiones regulares que son los siguientes:
 
-^.- Caracter que representa el inicio de la expresión regular.
-$.- Caracter que representa el final de la expresión regular.
-\*.- Caracter que representa cero o más ocurrencias de la expresión
-+.- Caracter que representa una o más ocurrencias de la expresión.
-{n}.-Representa n veces de una expresión.
-[ ] .- Representa un conjunto de caracteres, por ejemplo: [a-z] representa las letras del abecedario de la a a la z.
+- `^` Caracter que representa el inicio de la expresión regular.
+- `$` Caracter que representa el final de la expresión regular.
+- `*` Caracter que representa cero o más ocurrencias de la expresión
+- `+` Caracter que representa una o más ocurrencias de la expresión.
+- `{n}` Representa n veces de una expresión.
+- `[ ]` Representa un conjunto de caracteres, por ejemplo: [a-z] representa las letras del abecedario de la a a la z.
+
+> [Cheatsheet regex] (http://w3.unpocodetodo.info/utiles/regex.php)
+
 Tomando en cuenta estos criterios se realizará un programa que valida la siguiente información:
 Número de Identificación de un tamaño de 10 números. Ejemplo: 1717836520
 País de Origen denotado por dos letras en un rango específico. Ejemplo: EC, CO, US
@@ -196,3 +199,11 @@ Fecha de Nacimiento en el formato yyyyMMDD. Ejemplo: 20181222
 
 Primero se definirá las expresiones regulares y se solicitará la información del usuario:
 <img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.58.48-4bedb3f4-a096-4381-97ad-61e73844d1d4.jpg"/>
+
+Luego se validará cada expresión regular comenzando con la identificación, para lo cual para cada validación se utilizará la sentencia condicional if y para comparar la expresión se debe utilizar el siguiente formato especial if [[ $variable =~ $expresionRegular ]] como se muestra a continuación.
+
+<img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.59.26-00ffab79-1f96-4d00-b135-4e82996e1c07.jpg"/>
+
+Se realizará la ejecución de la aplicación con los dos escenarios el correcto y el incorrecto como se muestra a continuación:
+
+<img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.59.55-0c3eb175-30c5-4563-97f0-d325ead87735.jpg"/>
