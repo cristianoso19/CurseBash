@@ -209,7 +209,9 @@ Luego se validará cada expresión regular comenzando con la identificación, pa
 Se realizará la ejecución de la aplicación con los dos escenarios el correcto y el incorrecto como se muestra a continuación:
 
 <img src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202019-01-16%20a%20la%28s%29%2015.59.55-0c3eb175-30c5-4563-97f0-d325ead87735.jpg"/>
+
 ### Validar información
+
 Es importante para asegurarnos la calidad de la información ingresada, para evitar posibles errores.
 Tenemos dos maneras de hacerlo.
 - `read -n<numero de caracteres>`
@@ -236,4 +238,49 @@ echo "Opcion: $option . backupName:$backupName"
 #Ideal para contraseñas
 read -s -p "Clave: " clave
 echo "Clave: $Clave"
+```
+
+### Envio de Opciones/Parametros
+-  Se pueden enviar independientemente o complementaria. Encontraremos que se puede enviar solo opciones o parametros con opciones.
+- La diferencia entre un parametro y una opcion, es que la opcion se ingresa antecendedo el signo "-".
+```bash
+#!/bin/bash
+#Example options with or without parameters 
+#Autor: Cristian Sacta 
+
+echo "Programa Opciones"
+echo "Opcion 1 enviada:  $1"
+echo "Opcion 2 enviada:  $2"
+echo "Opcion eviadas: $*"
+echo -e "\n"
+echo "Recuperar valores"
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "-a option used";;
+-b) echo "-b option used";;
+-c) echo "-c option used";;
+-*) echo "$1 no es una opcion";;
+esac
+shift
+done
+
+```
+
+### Descargar información de internet.
+
+Se requiere por que es necesario descargar archivos o programas por la consola. Para eso existe
+
+- wget
+- curl
+
+```bash
+#!/bin/bash
+#Download files or programs from internet
+#@cristianoso19
+
+echo "Descargar info desde internet"
+
+wget https://github.com/lusaxweb/vuesax-next
+
 ```
