@@ -134,3 +134,43 @@ echo "Información del kernel: $infoKernel"
 ### Debug
 - bash -v: Muestra el resultado detallado de nuestro script, evaluado linea a linea.
 - bash -x: Despliega la información de los comandos usados y su salida. 
+
+## Scripts Interactivos
+### Capturar información usuario
+Se usa el comando `read` de dos maneras:
+- Usandolo en conjunto con `echo`y `$REPLY`
+```bash
+#!/bin/bash
+#Capture user info using echo and read and $REPLY
+#Autor: Cristian Sacta 
+
+option=0
+backupName=""
+
+echo "Utility Postgres Program"
+echo -n "ingresar una opcion:"
+read
+option=$REPLY
+echo -n "Ingresar el nombre del archivo del backup:"
+read
+backupName=$REPLY
+echo "Opcion: $option . backupName:$backupName"
+
+```
+- Usando directamente `read`
+```bash
+#!/bin/bash
+#Capture user info using read 
+#Autor: Cristian Sacta 
+
+option=0
+backupName=""
+
+echo "Utility Postgres Program"
+
+read -p "ingresar una opcion:" option
+
+read -p "Ingresar el nombre del archivo del backup:" backupName
+
+echo "Opcion: $option . backupName:$backupName"
+```
