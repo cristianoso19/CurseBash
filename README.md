@@ -333,7 +333,28 @@ else
 fi
 
 echo -e "Tú información: \n$firstname \n$lastname \n$age \n$address \n$phone"
-
-
-
 ```
+
+## Condicionales
+
+### IF / ELSE
+Usa opradores lógicos y condicionales:
+
+```bash
+#Como usar IF
+
+if [ condition ]; then
+  statement 1 
+elif [ condition ]; then
+  statement 2
+else
+  statement 3
+fi
+```
+Tambien podremos usar estos opradores relacionales
+- eq: is equal to // Igual a
+- ne: is not equal to // No es igual a
+- gt: is greater than // Mayor a
+- ge: is greater than or equal to // Mayor o igual a
+- lt: is less than // Menor a
+- le: is less than or equal to // Menor o igual a
