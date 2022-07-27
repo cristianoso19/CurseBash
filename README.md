@@ -564,3 +564,15 @@ do
 done
 
 ```
+
+### While loop
+Itera lista de valores basada en una condición lógica que debe ser evaluada a verdad.
+```bash
+while [ condition ]
+do
+  statement1
+  statement2
+  ...
+  statementN
+done
+```
