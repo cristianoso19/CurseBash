@@ -396,4 +396,119 @@ fi
 - Formada por una o más condiciones.
 - Condiciones con tipos de datos diferentes.
 - Usa los operadores relacionales y condicinales.
+```bash
+#!/bin/bash
+#Expresiones condicionales
+#Autor: @cristianoso19
+
+edad=0
+pais=""
+pathArchivo=""
+
+read -p "Ingrese su edad:" edad
+read -p "Ingrese su pais:" pais
+read -p "Ingrese el path de su archivo:" pathArchivo
+
+echo -e "\nExpresiones condicionales con números"
+if [ $edad -lt 10 ]; then
+  echo "La persona es un niño o niña"
+elif [ $edad -ge 10 ] && [ $edad -le 17 ]; then
+  echo "Es un adolecente"
+else
+  echo "Es mayor de edad"
+fi
+
+#Usamos "=" para comparar STRINGS
+echo -e "\nExpresiones condicionales con cadenas"
+if [ $pais = "USA" ]; then
+  echo "La persona es americana"
+elif [ $pais = "Ecuador" ] || [ $pais = "Colombia" ]; then
+  echo "La persona es de Sudamerica"
+else
+  echo "Se desconoce la nacionalidad"
+fi
+
+#Usamos "=" para comparar archivos
+echo -e "\nExpresiones condicionales con archivos"
+#Verificar si el archivo existe
+if [ -d $pathArchivo ]; then
+  echo "El directorio $pathArchivo existe"
+else
+  echo "El directorion $pathArchivo no existe"
+fi
+```
+
+### Sentencias Case
+Similar a **SWITCH**
+
+```bash
+case expression in 
+opcion1)
+ statements 1;;
+opcion2)
+  statemens 2;;
+...
+esac
+```
+- Evalua una expresion simple o una cadena.
+- Muy similar a la sentencia switch.
+- Puede evaluar rango de caracteres.
+```bash
+#!/bin/bash
+#Sentencias Case
+#Autor: @cristianoso19
+
+opcion=""
+
+echo "Ejemplo Sentencia Case"
+read -n1 -p "Ingrese una opción de la A-Z: " opcion
+echo -e "\n"
+
+case $opcion in 
+  "A") 
+    echo -e "\n Guardar Archivo";;
+  "B")
+    echo -e "\n Eliminar Archivo";;
+  [C-E])
+    echo -e "\n No esta implementada la operación";;
+  "*")
+    echo -e "\n Opcion incorrecta";;
+esac
+```
+
+## Iteracion
+### Arreglos
+Es una variable con "n" cantidad de elementos", ya sean numeros, strings. Empiezan por 0
+
+
+```bash
+#!/bin/bash
+#Arreglos
+#Autor: @cristianoso19
+
+arregloNumeros=(1 2 3 4 5 6)
+arregloStrings=(Cristian, Jenny, Cami, Eve)
+arregloRangos=({A..Z} {10..20})
+
+#Imprimir todos los valores
+echo "Arreglo de números: ${arregloNumeros[*]}"
+echo "Arreglo de Cadenas: ${arregloCadenas[*]}"
+echo "Arreglo de números: ${arregloRangos[*]}"
+
+#Imprimir tamaño de arreglos
+echo "Tamaño Arreglo de números: ${#arregloNumeros[*]}"
+echo "Tamaño Arreglo de Cadenas: ${#arregloCadenas[*]}"
+echo "Tamaño Arreglo de números: ${#arregloRangos[*]}"
+
+#Imprimir indice 3 de arreglos
+echo "Posicion 3 Arreglo de números: ${#arregloNumeros[3]}"
+echo "Posicion 3 Arreglo de Cadenas: ${#arregloCadenas[3]}"
+echo "Posicion 3 Arreglo de números: ${#arregloRangos[3]}"
+
+#Añadir y eliminar valores en arreglos
+arregloNumeros[7]=20
+unset arregloNumeros[0]
+echo "Arreglo de numeros: ${arregloNumeros[*]}"
+echo "Tamaño arreglo de numeros: ${#arregloNumeros[*]}"
+```
 
