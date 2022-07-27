@@ -377,3 +377,16 @@ else
   echo "La persona es un adulto mayor"
 fi
 ```
+### If anidados
+```bash
+if [ condition ]; then
+  if [ condition ]; then
+    statement 1
+  else
+    statement 2
+  fi
+else
+  statement 3
+fi
+```
+
