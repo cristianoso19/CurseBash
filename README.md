@@ -390,3 +390,10 @@ else
 fi
 ```
 
+### Expresiones condicionales.
+
+- Usada enn decisión, iteración.
+- Formada por una o más condiciones.
+- Condiciones con tipos de datos diferentes.
+- Usa los operadores relacionales y condicinales.
+
