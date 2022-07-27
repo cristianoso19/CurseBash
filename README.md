@@ -576,3 +576,35 @@ do
   statementN
 done
 ```
+Ejemplo
+```bash
+#!/bin/bash
+#while loop
+#Autor: @cristianoso19
+
+numero=1
+
+while [ $numero -ne 10 ]
+do
+  echo "Imprimiendo $numero veces"
+  numero=$(( numero+1 ))
+done
+```
+
+###Loops anidados
+Igual que los if anidados.
+Ejemplo
+```bash
+#!/bin/bash
+#loops anidados
+#Autor: @cristianoso19
+
+echo "Loops anidados"
+for fil in $(ls)
+do
+  for nombre in fil{1..4}
+  do
+    echo "Archivo: $fil _ $nombre"
+  done
+done
+```
