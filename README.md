@@ -688,3 +688,53 @@ do
   esac
 done
 ```
+## Archivos
+
+### Archivos y directorios.
+Con bash se puede crear archivos y directorios
+```bash
+#!/bin/bash
+# Crear archivos y directorios
+# Autor: @cristianoso19
+
+echo "Archivos - Directorios"
+
+#Para ver se envian los parametros correctos
+if [[ $# -ne 2 ]]; then
+    echo "Número de parámetros incorrectos"
+    exit 1
+fi
+
+if [ $1 = "d" ]; then
+  mkdir -m 755 $2
+  echo "Directorio creado correctamente"
+  ls -la $2
+elif [ $1 == "f" ]; then
+  touch $2
+  echo "Archivo creado correctamente"
+  ls -la $2
+else
+  echo "No existe esa opcion: $1"
+fi
+```
+### Escritura dentro de archivos
+Escribir en un archivo sin usar un editor
+> `>> #concatena`
+> `> #reemplaza`
+> EOM: End Of Message EOF: End Of File
+```bash
+#!/bin/bash
+# Escritura de un archivo 
+# Autor: @cristianoso19
+
+echo "Escribir en un archivo"
+
+#forma 1
+echo "Valores escritos con el comando echo" >> $1
+
+#forma 2 multilinea
+cat <<EOM >> $1
+$2
+EOM
+
+```
