@@ -608,3 +608,29 @@ do
   done
 done
 ```
+### Break y continue
+- break: se utiliza para salir de cualquier ciclo o bucle.
+- continue: para detener la ejecución de los comandos restantes dentro de un ciclo pero sin salir del mismo y pasar inmediatamente a la siguiente iteración.
+
+> [Loops y condicionales](https://blogs.upm.es/estudiaciencia/bucles-y-condicionales/)
+```bash
+#!/bin/bash
+#Break y continue
+#Autor: @cristianoso19
+
+echo "Break y continue"
+
+for fil in $(ls)
+do
+  for nombre in fil{1..4}
+  do
+    if [ $fil = "10_download.sh" ]; then
+      break;
+    elif [[ $fil == 4* ]]; then
+      continue;
+    else
+      echo "Archivo: $fil _ $nombre"
+    fi
+  done
+done
+```
