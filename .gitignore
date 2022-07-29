@@ -2,3 +2,4 @@ prueba.txt
 *.tar
 *.*.gz
 *.*.bz2
+*.zip

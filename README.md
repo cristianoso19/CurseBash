@@ -788,4 +788,34 @@ rm *.txt
 
 ### TAR, GZIP Y PBZIP2
 Es necesario empaquetar y/o comprimir información para poder transaladarla por la red o por otros dispositivos. Es util para un sistema de respaldos.
+```bash
+#!/bin/bash
+# Empaquetar con PBZIP
+# Se usa por usa multicore, comprime un solo archivo
+# Autor: @cristianoso19
+
+echo "Empaquetar todos los scripts en la carpeta actual"
+tar -cvf shellCourse.tar *.sh
+pbzip2 -f shellCourse.tar
+
+echo "Empaquetar con tar y comprimir con pbzip2"
+tar -cvf *.sh -c > shellCourseDos.tar.bz2
+```
+### Respaldo del Empaquetado con clave
+Usamos la herramienta zip, hay que instalarla en la mayoria de linux
+> Tambien existen otras alternativas como GnuPG, bcrypt, 7zip entre otras.
+```bash
+#!/bin/bash
+# Empaquetar ZIP y PASSWORD 
+# Se usa por usa multicore, comprime un solo archivo
+# Autor: @cristianoso19
+
+echo "Empaquetar todos los scripts en la carpeta actual con zip y asignar un password"
+
+zip -e shellCourse.zip *.sh
+
+#para descomprimir:
+#unzip archivo.zip
+
+```
 
