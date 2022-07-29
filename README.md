@@ -818,4 +818,21 @@ zip -e shellCourse.zip *.sh
 #unzip archivo.zip
 
 ```
+### Transferir información en red
+- Rsync es un comando que sirve para sincronizar archivos y directorios entre diferentes locaciones y minimiza la transferencia de datos
+- Soporta caracteristicas de compresión y encriptación entre otras.
+```bash
+#!/bin/bash
+# Transferir empaquetados por red usando RSYNC 
+# Se usa por usa multicore, comprime un solo archivo
+# Autor: @cristianoso19
 
+echo "Transferir empaquetados por red usando RSYNC"
+
+read -p "Ingresar host: " host
+read -p "Ingresar usuario: " user
+
+echo -e "\nEmpaquetando la carpeta y transferirla segun los datos ingresados"
+
+rsync -avz $(pwd) $user@$host:/home/ecmserver/prob
+```
