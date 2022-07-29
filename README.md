@@ -784,3 +784,8 @@ mv backupScripts $HOME
 echo -e "\n Eliminar los archivos .txt"
 rm *.txt
 ```
+## Empaquetamiento
+
+### TAR, GZIP Y PBZIP2
+Es necesario empaquetar y/o comprimir información para poder transaladarla por la red o por otros dispositivos. Es util para un sistema de respaldos.
+

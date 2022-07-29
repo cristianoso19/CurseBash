@@ -1,2 +1,4 @@
 prueba.txt
-
+*.tar
+*.*.gz
+*.*.bz2
