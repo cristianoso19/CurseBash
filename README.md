@@ -835,4 +835,7 @@ read -p "Ingresar usuario: " user
 echo -e "\nEmpaquetando la carpeta y transferirla segun los datos ingresados"
 
 rsync -avz $(pwd) $user@$host:/home/ecmserver/prob
+#a de archivo,v de verbose y z de opción de compresión
 ```
+
+> [Más sobre RSYNC](https://atareao.es/software-linux/sincronizacion-a-fondo-con-rsync/)
